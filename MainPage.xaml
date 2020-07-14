@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="CanvasSizeChangedTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CanvasSizeChangedTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    RequestedTheme="Light" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Content="Random a Size" Click="Button_Click" />
+        <Canvas x:Name="OuterCanvas" Grid.Row="1" Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Canvas x:Name="InnerCanvas" Background="#007acc" SizeChanged="InnerCanvas_SizeChanged" />
+        </Canvas>
+    </Grid>
+</Page>
